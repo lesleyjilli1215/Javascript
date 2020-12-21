@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>顯示所有汽車名稱</button>
+    <ul id="container"></ul>
+
+    <script>
+        let btn = document.querySelector("button");
+        let container = document.getElementById("container");
+
+        let Cars = ['BMW', 'Benz', 'Audi', 'Lexus'];
+        let ImgUrls = [
+            "https://live.staticflickr.com/65535/49940427521_13cfa90d5e_c.jpg",
+            "https://autos.yahoo.com.tw/p/r/w1200/car-trim/March2020/d37c35c815b5a28606395cd5a34a187e.jpeg",
+            "https://channel-auto.com/wp-content/uploads/2020/07/audi-q4-e-tron-sportback-concept-3.jpg",
+            "https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2020-08/16dde4b1-d6ef-11ea-ac37-2e342455ea0f",
+        ];
+
+        window.onload = function () {
+            //註冊click事件
+            btn.addEventListener("click", listCars);
+        }
+
+        function listCars() {
+            Cars.forEach(function (item, index) {
+                let li = document.createElement("li");
+                let imgUrl = ImgUrls[index]
+                li.innerHTML = `汽車索引:${index}，汽車名稱:${item} <img src="${imgUrl}" />`;
+                container.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+
+        <h1>It's my first JavaScript function!</h1>
+        <h3 id="username">OXOXOXOXOXOX</h3>
+
+    </div>
+
+    <div id="container">
+
+    </div>
+
+    <img id="pic01" src="" alt="">
+
+    <script>
+
+        let firstname = "David", lastname = "Wang";
+        function getFullName(firstname, lastname) {
+            return `${firstname} ${lastname}`
+        }
+
+        let fullname = getFullName(firstname, lastname);
+        fullname = `<b style="color:red">${fullname}</b>`
+        // document.write(`Full Name is ${fullname}`);
+        document.getElementById("username").innerText = fullname;
+
+        document.getElementById("username").innerHTML = fullname;
+
+        let imgUrl = "https://i2.wp.com/straatosphere.com/wp-content/uploads/2020/10/Vintage-Stussy-tees-headers.jpg?w=1200&ssl=1";
+
+        let img = `<img src="${imgUrl}" />`;
+
+        document.getElementById("container").innerHTML = img;
+
+        document.getElementById("pic01").src = imgUrl;
+
+    </script>
+</body>
+
+</html>
