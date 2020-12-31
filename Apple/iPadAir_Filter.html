@@ -28,7 +28,11 @@
         <option value="Wi-Fi">Wi-Fi</option>
         <option value="Cellular">Wi-Fi + Cellular</option>
     </select>
-
+    
+    <div id='selection'></div>
+    <hr>
+    <button id="btnQuery" disabled="false">查詢Storage & Network規格</button>
+    <div id='specList'></div>
 
     <script>
         window.onload = () => {
@@ -36,7 +40,7 @@
             document.querySelector('#color').addEventListener('change', findIpads);
             document.querySelector('#storage').addEventListener('change', findIpads);
             document.querySelector('#network').addEventListener('change', findIpads);
-            document.querySelector('#btnQuery').addEventListener('click', ListIpads);
+            document.querySelector('#btnQuery').addEventListener('click', listIpads);
         }
 
         const url = "https://raw.githubusercontent.com/SUTSEWEI/FileStorage/main/iPadAir2020_Data_.json"
@@ -58,22 +62,47 @@
             xhr.send()
         }
 
-        let _color, _storge, _network;
+        let _color, _storage, _network;
         function findIpads() {
+            _color_ = document.querySelector("#color").selectedOptions[0];
             _color = document.querySelector("#color").selectedOptions[0].value;
-            _storge = document.querySelector("#storage").selectedOptions[0].value;
+            _storage = document.querySelector("#storage").selectedOptions[0].value;
             _network = document.querySelector("#network").selectedOptions[0].value;
 
             //3個Select選種的value不得為-1
-            if (_color == "-1" || _storge == "-1" || _network == "-1") {
+            if (_color == "-1" || _storage == "-1" || _network == "-1") {
                 document.querySelector("#btnQuery").disabled = true;
                 selection.innerHTML = "";
                 return;
             }
-            
-            document.querySelector("#btnQuery").disabled = false;
-            selection.innerHTML = `color : ${_color}, storage : ${_storge}, network : ${_network}<br/>`;
 
+            document.querySelector("#btnQuery").disabled = false;
+            // selection.innerHTML = `color : ${_color}, storage : ${_storage}, network : ${_network}<br/>`;
+
+            let filterIpads = ipadArray.filter(x => x.color == Colors[_color] && x.storage == _storage && x.network == _network)
+            //let ipad = filterIpads.filter(x => x.color == _colorName);
+            //let ipad = filterIpads.find(x => x.color == _colorName);
+            // let ipad = filterIpads.find(x => x.color == Colors[_color]);
+            let ipad = filterIpads.find(x => x.color == _color_.innerHTML);
+            let imgUrl = `http://127.0.0.1:5500/Apple/${ipad.picture}`;
+            selection.innerHTML = JSON.stringify(ipad) + `<img src="${imgUrl}">`;
+        }
+
+        let filterArray = [];
+        let specList = document.querySelector("#specList");
+        function listIpads(){
+            derbugger;
+            let br = document.createElement("br");
+
+            filterArray = ipadArray.filter(x => x.storage == _storage && x.network == _network);
+
+            specList.innerHTML = "";
+
+            filterArray.forEach((item, index) => {
+                let ipad = document.createTextNode(`${index + 1}. ${JSON.stringify(item)}`);
+                specList.appendChild(ipad);
+                specList.appendChild(br.cloneNode());
+            });
         }
 
     </script>
