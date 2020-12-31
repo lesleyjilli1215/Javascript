@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #msg {
+            font-size: 100px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- MDN -- <input type="number"> -->
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number -->
+    <h1>挑選幸運兒</h1>
+    <label for="from">From</label>
+    <input type="text" id="from">
+    <!-- <input type="number" min=1 max=30 id="from"> -->
+    <label for="to">To</label>
+    <input type="text" id="to">
+    <!-- <input type="number" min=1 id="to"> -->
+    <!-- <button onclick="StartChoose()" id="Start">選出幸運兒</button>
+    <button onclick="StopChoose()" id ="Stop">Stop</button> -->
+    <button id="Start">選出幸運兒</button>
+    <button id="Stop">Stop</button>
+    <div id="msg"></div>
+    <script>
+        function SelectMan() {
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let num = getRandom(from, to);
+            let msg = document.querySelector("#msg");
+            msg.innerText = num.toString().padStart(2, '0');
+            // msg.textContent = num;
+        }
+
+        //取得亂數
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+
+        document.getElementById("Start").addEventListener('click', SrartChoose);
+        document.getElementById("Stop").addEventListener('click', StopChoose);
+
+        let intervalId;
+        function StartChoose(){
+            intervalId = setInterval(SelectMan, 80);
+            document.getElementById("Start").disabled=true;
+        }
+
+        function StopChoose(){
+            clearInterval(intervalId);
+            document.getElementById("Start").disabled = false;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="color" id="color">
+        <option value="-1">---請選擇Color顏色---</option>
+        <option value="gray">太空灰色</option>
+        <option value="silver">銀色</option>
+        <option value="rose">玫瑰金色</option>
+        <option value="green">綠色</option>
+        <option value="blue">天藍色</option>
+    </select>
+
+    <select name="storage" id="storage">
+        <option value="-1">---請選擇Storage容量---</option>
+        <option value="64GB">64GB</option>
+        <option value="256GB">256GB</option>
+    </select>
+
+    <select name="network" id="network">
+        <option value="-1">---請選擇網路---</option>
+        <option value="Wi-Fi">Wi-Fi</option>
+        <option value="Cellular">Wi-Fi + Cellular</option>
+    </select>
+
+
+    <script>
+        window.onload = () => {
+            requestIpadJson();
+            document.querySelector('#color').addEventListener('change', findIpads);
+            document.querySelector('#storage').addEventListener('change', findIpads);
+            document.querySelector('#network').addEventListener('change', findIpads);
+            document.querySelector('#btnQuery').addEventListener('click', ListIpads);
+        }
+
+        const url = "https://raw.githubusercontent.com/SUTSEWEI/FileStorage/main/iPadAir2020_Data_.json"
+
+        let ipadArray = [];
+        let msg = document.querySelector('#msg')
+        function requestIpadJson() {
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                ipadArray = JSON.parse(this.responseText);
+                // let br = document.createElement("br")
+                // ipadArray.forEach((item,index) => {
+                //     let ipad = document.createTextNode(`${index+1}. ${JSON.stringify(item)}`);
+                //     msg.appendChild(ipad);
+                //     msg.appendChild(br.cloneNode());
+                // });
+            };
+            xhr.open("GET", url)
+            xhr.send()
+        }
+
+        let _color, _storge, _network;
+        function findIpads() {
+            _color = document.querySelector("#color").selectedOptions[0].value;
+            _storge = document.querySelector("#storage").selectedOptions[0].value;
+            _network = document.querySelector("#network").selectedOptions[0].value;
+
+            //3個Select選種的value不得為-1
+            if (_color == "-1" || _storge == "-1" || _network == "-1") {
+                document.querySelector("#btnQuery").disabled = true;
+                selection.innerHTML = "";
+                return;
+            }
+            
+            document.querySelector("#btnQuery").disabled = false;
+            selection.innerHTML = `color : ${_color}, storage : ${_storge}, network : ${_network}<br/>`;
+
+        }
+
+    </script>
+</body>
+
+</html>

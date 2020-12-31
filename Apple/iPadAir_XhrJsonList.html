@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>用XMLHttpRequest請求GitHub JSON資料</h1>
+    <button id="btnGetJSON">Request JSON1</button>
+    <div id='msg'></div>
+
+    <script>
+        window.onload = () => {
+            document.querySelector('#btnGetJSON').addEventListener('click', requestIpadJson);
+        }
+
+        const url = "https://raw.githubusercontent.com/SUTSEWEI/FileStorage/main/iPadAir2020_Data_.json"
+
+        let ipadArray =[];
+        let msg = document.querySelector('#msg')
+        function requestIpadJson(){
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function(){
+                ipadArray = JSON.parse(this.responseText);
+                let br = document.createElement("br")
+                ipadArray.forEach((item,index) => {
+                    let ipad = document.createTextNode(`${index+1}. ${JSON.stringify(item)}`);
+                    msg.appendChild(ipad);
+                    msg.appendChild(br.cloneNode());
+                });
+            };
+            xhr.open("GET",url)
+            xhr.send()
+        }
+    </script>
+</body>
+</html>
