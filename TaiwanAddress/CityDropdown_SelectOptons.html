@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- select 1 -->
+    <select id='cities' name='cities'>
+        <option value="-1">---請選擇縣市---</option>
+        <option value="taipei">台北</option>
+        <option value="taoyuan">桃園</option>
+        <option value="taichung">台中</option>
+    </select>
+    <!-- select 2 -->
+    <select id="district" name="district" onchange="finalSelect()">
+        <option value="-1">---請選擇行政區---</option>
+        <option value="taipei01">中正區</option>
+        <option value="taipei02">萬華區</option>
+        <option value="taipei03">信義區</option>
+    </select>
+    <!-- sumit -->
+    <input type="submit" value="提交資料" onclick='submitData()'>
+    <div id='msg'></div>
+    <script>
+        //取得select element元素
+        const citySelect = document.getElementById('cities');
+        const districtSelect = document.getElementById('district');
+        const divMsg = document.getElementById('msg');
+        //顯示選擇City-District
+        function finalSelect() {
+            let cityValue = citySelect.selectedOptions[0].value;
+            let districtValue = districtSelect.selectedOptions[0].text;
+            if (cityValue =="-1" || districtValue == "-1") {
+                return;
+            };
+            divMsg.textContent = citySelect.selectedOptions[0].text + ', ' + districtSelect.selectedOptions[0].text;
+        }
+        function submitData() {
+            //建立FormData
+            let formData = new FormData();
+            formData.append("city", citySelect.selectedOptions[0].value);
+            formData.append("district", districtSelect.selectedOptions[0].text);
+            //傳送FormData資料到指定的Server，將資料交由Server處理
+            let request = new XMLHttpRequest();
+            request.open("POST", "https://www.codemagic.com.tw");
+            request.send(formData);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <button>Click</button>
+
+    <script type="module">
+        import { $g } from "../LoL/Module/helpers.js"
+
+        let zipcodeArray = [];
+        let ZipCode = [];
+
+        $g('button').addEventListener('click',getAddressJSON);
+
+
+        function getAddressJSON(){
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function(){
+                zipcodeArray = JSON.parse(this.responseText)
+                
+                zipcodeArray.forEach(item =>{
+                    document.write(item.CityName + "<br>")
+                    document.write("<ul>")
+                    item.AreaList.forEach(item => {
+                        document.write("<li>" + item.AreaName + ", " + item.ZipCode + "<li>")
+                    })
+                    document.write("<ul>")
+                })
+            }
+            xhr.open("GET","https://raw.githubusercontent.com/apprunner/FileStorage/master/TaiwanAddress.json")
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
