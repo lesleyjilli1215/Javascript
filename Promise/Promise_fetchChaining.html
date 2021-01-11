@@ -1,0 +1,72 @@
+<button id="btnXhr">XHR載入Pokemon & LoL JSON檔</button>
+<button id="btnPromise">Promise載入Pokemon & LoL JSON檔</button>
+<script>
+    let pokemonUrl = "https://raw.githubusercontent.com/apprunner/pokemon.json/master/pokedex.json";
+    let lolUrl = "https://ddragon.leagueoflegends.com/cdn/10.22.1/data/zh_TW/champion.json";
+    window.onload = function () {
+        document.querySelector("#btnXhr").addEventListener("click", function () {
+            xhrJson(pokemonUrl, lolUrl);
+        });
+        document.querySelector("#btnPromise").addEventListener("click", function () {
+            fetchJSON(pokemonUrl, lolUrl);
+        });
+    }
+
+    function xhrJson(...args) {
+        let argArray = args;
+        let pokemon = argArray[0];
+        let lol = argArray[1];
+
+        let xhr1 = new XMLHttpRequest();
+        xhr1.onload = function () {
+            console.log(this.responseText);
+            alert("Pokemon JSON");
+        }
+
+        xhr1.open('GET', pokemon);
+        xhr1.send();
+    }
+
+    function fetchJSON(...args) {
+        let argArray = args;
+        let pokemon = argArray[0];
+        let lol = argArray[1];
+
+        console.log(pokemon, lol);
+
+        fetch(pokemon)
+            .then(response => response.json())
+            .then(result1 => {
+                console.log(typeof result1);
+                console.log(result1);
+                alert("Pokemon JSON");
+            })
+            .then(() => fetch(lol))
+            .then(response => response.text())
+            .then(result2 => {
+                //console.log(typeof result2);
+                let text = document.createTextNode(result2);
+                document.body.appendChild(text);
+                alert("LOL JSON")
+            })
+    }
+
+    let $xhr = function (url) {
+        return new Promise((resolve, reject) => {
+            let xhr = new XMLHttpRequest();
+            xhr.responseType = "json";
+            xhr.open("GET", url);
+            xhr.onload = () => resolve(xhr.response);
+            xhr.onerror = () => reject(xhr.status);
+            // xhr.onload = () => resolve(this.response);
+            // xhr.onerror = () => reject(this.status);
+            xhr.send()
+        });
+    }
+
+    let $fetch = function (url) {
+        return fetch(url)
+            .then(response => response.json())
+    }
+
+</script>
