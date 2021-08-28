@@ -225,6 +225,22 @@
 
 @media screen and (min-width:768px) {
 
+    .headerImg {
+        width: 300px;
+    }
+
+    .wrapper .header h1 {
+        font-size: 30px;
+    }
+
+    .wrapper .header p {
+        font-size: 20px;
+    }    
+
+    .whatIsACreator_title {
+        font-size: 20px;
+    }
+
     .epalButtonWrapperPurple {
         font-size: 12px;
     }
@@ -234,8 +250,12 @@
     }
 
     .whatIsACreator_content {
-        font-size: 12px;
+        font-size: 14px;
         display: inline-block;
+    }
+
+    .privilegeTitle {
+        font-size: 20px;
     }
 
     .secondCardContent {
@@ -255,13 +275,29 @@
         width: 40%;
     }
 
+    .title {
+        font-size: 14px;
+    }
+
+    .content {
+        font-size: 14px;
+    }
+
     .whoCanBecomeACreator_title:before {
         left: 47%;
     }
 
     .whoCanBecomeACreator_content {
-        font-size: 12px;
+        font-size: 14px;
         display: inline-block;
+    }
+
+    .whoCanBecomeACreator_title {
+        font-size: 20px;
+    }
+
+    .whoCanBecomeACreator_content p {
+        font-size: 14px;
     }
 }
 
