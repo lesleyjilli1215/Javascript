@@ -110,6 +110,7 @@
 .whatIsACreator_content{
     margin-top: 16px;
     font-size: 10px;
+    color: #c4c3e6;
 }
 
 /* secondCard */
@@ -416,5 +417,121 @@
 }
 
 @media screen and (min-width:1200px) {
+
+    .headerImg {
+        width: 563px;
+        height: 75px;
+    }
+
+    .wrapper .header h1 {
+        font-size: 48px;
+    }
+
+    .wrapper .header p {
+        font-size: 24px;
+        margin-top: 15px;
+        margin-bottom: 40px;
+    }
+
+    .epalButtonWrapperPurple {
+        font-size: 18px;
+        width: 180px;
+    }
+
+    .firstCardContent {
+        margin: 0 80px;
+    }
+
+    .whatIsACreator {
+        display: flex;
+    }
+
+    .whatIsACreator img {
+        width: 400px;
+        height: 260px;
+    }
+
+    .whatIsACreator_title {
+        font-size: 24px;
+        display: flex;
+    }
+
+    .whatIsACreator_title:before {
+        left: 0%;
+    }
+
+    .whatIsACreator_content {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .items {
+        display: block;
+    }
+
+    .itemImg img {
+        width: 240px;
+        height: 128px;
+        margin-left: auto;
+    }
+
+     .privilegeImgs{
+        display: flex;
+    }
+
+    .secondCardContent {
+        margin: 0 50px;
+    }
+
+    .title {
+        font-size: 14px;
+        margin: 0px 0 12px;
+    }
+
+    .content {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .privilegeTitle {
+        font-size: 24px;
+    }
+
+    .itemText {
+        width: 95%;
+        text-align: center;
+        margin: auto;
+    }
+
+    .thirdCardContent {
+        margin: 0 80px;
+    }
+
+    .whoCanBecomeACreator {
+        display: flex;
+    }
+
+    .whoCanBecomeACreator {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .whoCanBecomeACreator img {
+        width: 400px;
+        height: 262px;
+    }
+
+    .whoCanBecomeACreator_title {
+        font-size: 24px;
+        display: flex;
+    }
+
+    .whoCanBecomeACreator_title:before {
+        left: 0%;
+    }
+
+    .whoCanBecomeACreator_content p {
+        font-size: 14px;
+    }
 
 }
