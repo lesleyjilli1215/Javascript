@@ -119,11 +119,11 @@
 }
 
 .secondCardContent{
-    margin: 0 auto;
+    margin: 0 5px;
 }
 
 .privilegeTitle{
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--font-color-1);
     line-height: 33px;
@@ -135,27 +135,28 @@
 }
 
 .itemImg{
-    width: 40%;
+    width: 30%;
 }
 
 .itemImg img{
-    width: 400px;
+    width: 120px;
+    margin: 30px 0 8px;
 }
 
 .itemText{
-    width: 50%;
+    width: 65%;
     margin: auto;
 }
 
 .title{
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 500;
-    line-height: 20px;
-    margin: 12px 0 8px;
+    line-height: 0px;
+    margin: 30px 0 8px;
 }
 
 .content{
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     color: #c4c3e6;
     line-height: 18px;
@@ -210,7 +211,7 @@
     font-size: 10px;
 }
 
-p{
+.whoCanBecomeACreator_content p{
     margin: 0;
     font-size: 10px;
     color: #c4c3e6;
