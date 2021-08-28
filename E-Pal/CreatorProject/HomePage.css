@@ -245,13 +245,18 @@
         padding: 40px 0 65px;
     }
 
+    .firstCardContent {
+        margin: 0 80px;
+    }
+
     .whatIsACreator_title {
         font-size: 20px;
         line-height: 65px;
     }
 
     .epalButtonWrapperPurple {
-        font-size: 12px;
+        font-size: 14px;
+        width: 140px;
     }
 
     .whatIsACreator_title:before {
@@ -295,6 +300,10 @@
 
     .thirdCard {
         padding: 40px 0 120px;
+    }
+
+    .thirdCardContent {
+        margin: 0 80px;
     }
 
     .whoCanBecomeACreator_title:before {
