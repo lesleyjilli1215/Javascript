@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    }
+
+/* header */
+.wrapper .header{
+    text-align: center;
+    padding: 144px 0 0;
+    background: url(/E-Pal/CreatorProject/Img_CreatorProjectHomepage/CPH_09.jpg) 50% no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 580px;
+}
+
+.headerImg{
+    display: block;
+    width: 563px;
+    height: 75px;
+    margin: 0 auto 24px;
+}
+
+.shadowImg{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 121px;
+}
+
+.wrapper .header h1{
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 48px;
+    margin: 0;
+}
+
+.wrapper .header p{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 33px;
+    margin-top: 8px;
+    margin-bottom: 40px;
+}
+
+.epalButtonWrapper{
+    display: inline-block;
+}
+
+.epalButtonWrapperPurple{
+    position: relative;
+    border: 0;
+    outline: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 180px;
+    padding: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #625cff, #7041e6);
+    background-size: 100%;
+    border-radius: 400px;
+}
+
+/* firstCard */
+.firstCard{
+    position: relative;
+    padding: 0 0 56px;
+    background-color: black;
+}
+
+.firstCardContent{
+    width: 1120px;
+    margin:auto;
+}
+
+.whatIsACreator{
+    align-items: center;
+    justify-content: space-between;
+    display: block;
+    text-align: center;
+}
+
+.whatIsACreator_info{
+    position: relative;
+}
+
+.whatIsACreator img{
+    width: 400px;
+    height: 260px;
+    margin-right: 24px;
+    text-align: centers;
+}
+
+.whatIsACreator_title{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 57px;
+    position: relative;
+}
+
+.whatIsACreator_title:before{
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    width: 48px;
+    height: 4px;
+    content: "";
+    background: linear-gradient(270deg,#c86398,#7e53f4);
+}
+
+.whatIsACreator_content{
+    margin-top: 16px;
+    font-size: small;
+}
+
+/* secondCard */
+.secondCard{
+    padding: 56px 0;
+    background-color: #21212c
+}
+
+.secondCardContent{
+    width: 1120px;
+    margin: 0 auto;
+}
+
+.privilegeTitle{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--font-color-1);
+    line-height: 33px;
+    text-align: center;
+}
+
+.items{
+    display: flex;
+}
+
+.itemImg{
+    width: 50%;
+
+}
+
+.itemText{
+    width: 50%;
+    margin: auto;
+}
+
+.title{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 12px 0 8px;
+}
+
+.content{
+    font-size: 12px;
+    font-weight: 400;
+    color: #c4c3e6;
+    line-height: 18px;
+}
+
+/* thirdCard */
+.thirdCard{
+    padding: 56px 0;
+    background-color: black;
+    width: 100%;
+}
+
+.whoCanBecomeACreator_img{
+    width: 10%;
+    display: block;
+    margin: auto;
+}
+
+.whoCanBecomeACreator_title{
+    font-size: 24px;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+}
+
+.whoCanBecomeACreator_title:before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 4px;
+    content: "";
+    background: linear-gradient(270deg,#c86398,#7e53f4);
+}
+
+.whoCanBecomeACreator_content{
+    margin-top: 16px;
+    position: relative;
+    left: 1100px;
+}
+
+p{
+    margin: 0;
+    font-size: 14px;
+    color: #c4c3e6;
+    line-height: 20px;
+}
