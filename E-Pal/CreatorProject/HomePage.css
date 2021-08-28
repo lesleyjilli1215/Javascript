@@ -344,6 +344,10 @@
         padding: 50px 0 75px;
     }
 
+    .firstCardContent {
+        margin: 0 150px;
+    }
+
     .whatIsACreator img {
         width: 270px;
         height: 180px;
@@ -386,6 +390,10 @@
 
     .thirdCard {
         padding: 50px 0 130px;
+    }
+
+    .thirdCardContent {
+        margin: 0 150px;
     }
 
     .whoCanBecomeACreator img {
