@@ -218,3 +218,57 @@
     line-height: 20px;
     display: flex;
 }
+
+@media screen and (max-width:767px) {
+
+}
+
+@media screen and (min-width:768px) {
+
+    .epalButtonWrapperPurple {
+        font-size: 12px;
+    }
+
+    .whatIsACreator_title:before {
+        left: 47%;
+    }
+
+    .whatIsACreator_content {
+        font-size: 12px;
+        display: inline-block;
+    }
+
+    .secondCardContent {
+        margin: 0 20px;
+    }
+
+    .itemImg {
+        width: 40%;
+    }
+
+    .itemImg img {
+        width: 220px;
+        margin-left: 50%;
+    }
+
+    .itemText {
+        width: 40%;
+    }
+
+    .whoCanBecomeACreator_title:before {
+        left: 47%;
+    }
+
+    .whoCanBecomeACreator_content {
+        font-size: 12px;
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width:992px) {
+
+}
+
+@media screen and (min-width:1200px) {
+
+}
