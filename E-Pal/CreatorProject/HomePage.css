@@ -75,7 +75,6 @@
 }
 
 .firstCardContent{
-    width: 1120px;
     margin:auto;
 }
 
@@ -126,7 +125,6 @@
 }
 
 .secondCardContent{
-    width: 1120px;
     margin: 0 auto;
 }
 
@@ -143,8 +141,11 @@
 }
 
 .itemImg{
-    width: 50%;
+    width: 40%;
+}
 
+.itemImg img{
+    width: 400px;
 }
 
 .itemText{
