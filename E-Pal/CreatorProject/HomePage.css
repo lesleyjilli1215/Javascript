@@ -327,6 +327,74 @@
 
 @media screen and (min-width:992px) {
 
+    .wrapper .header {
+        padding: 154px 0 70px;
+    }
+
+    .headerImg {
+        width: 400px;
+    }
+
+    .epalButtonWrapperPurple {
+        font-size: 16px;
+        width: 150px;
+    }
+
+    .firstCard {
+        padding: 50px 0 75px;
+    }
+
+    .whatIsACreator img {
+        width: 270px;
+        height: 180px;
+    }
+
+    .whatIsACreator_title {
+        font-size: 22px;
+    }
+
+    .whatIsACreator_content {
+        font-size: 16px;
+    }
+
+    .secondCard {
+        padding: 65px 0;
+    }
+
+    .privilegeTitle {
+        font-size: 22px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .content {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .itemImg img {
+        width: 250px;
+        margin-left: 58%;
+    }
+
+    .thirdCard {
+        padding: 50px 0 130px;
+    }
+
+    .whoCanBecomeACreator img {
+        width: 270px;
+        height: 180px;
+    }
+
+    .whoCanBecomeACreator_title {
+        font-size: 22px;
+    }
+
+    .whoCanBecomeACreator_content p {
+        font-size: 16px;
+    }
 }
 
 @media screen and (min-width:1200px) {
