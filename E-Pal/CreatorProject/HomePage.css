@@ -225,6 +225,10 @@
 
 @media screen and (min-width:768px) {
 
+    .wrapper .header {
+        padding: 144px 0 60px;
+    }
+
     .headerImg {
         width: 300px;
     }
@@ -236,6 +240,10 @@
     .wrapper .header p {
         font-size: 20px;
     }    
+
+    .firstCard {
+        padding: 40px 0 65px;
+    }
 
     .whatIsACreator_title {
         font-size: 20px;
@@ -277,10 +285,15 @@
 
     .title {
         font-size: 14px;
+        line-height: 15px;
     }
 
     .content {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .thirdCard {
+        padding: 40px 0 100px;
     }
 
     .whoCanBecomeACreator_title:before {
